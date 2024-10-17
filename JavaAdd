@@ -1,0 +1,25 @@
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Scanner;
+import java.util.Collections;
+
+public class JavaAdd {
+    public static void main(String[] args) {
+        List<Integer> numList = new ArrayList<>();
+        try (Scanner scanner = new Scanner(System.in)) {
+            System.out.println("Enter three numbers:");
+            for (int i = 0; i < 3; i++) {
+                numList.add(scanner.nextInt());
+            }
+        }
+
+        Collections.sort(numList); // Sort in ascending order
+        
+        // Access the second and third elements
+        int element1 = numList.get(1);
+        int element2 = numList.get(2);
+        int result = element1 + element2;
+
+        System.out.println("Sum of the second and third smallest numbers: " + result);
+    }
+}
